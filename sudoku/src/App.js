@@ -7,14 +7,17 @@ import ExercisesList from "./components/exercises-list.component";
 import EditExercise from "./components/edit-exercise.component";
 import CreateExercise from "./components/create-exercise.component";
 import CreateUser from "./components/create-user.component";
+import Board from './components/board.component';
 
 function App() {
   return (
     <Router>
-      <div className="container">
-      <Navbar />
+      {/* <div className="container"> */}
+      <div>
+      {/* <Navbar /> */}
       <br/>
-      <Route path="/" exact component={ExercisesList} />
+      <Route path="/" exact component={Board} />
+      <Route path = "/list" component = {ExercisesList} />
       <Route path="/edit/:id" component={EditExercise} />
       <Route path="/create" component={CreateExercise} />
       <Route path="/user" component={CreateUser} />
