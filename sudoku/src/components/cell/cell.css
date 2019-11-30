@@ -4,3 +4,8 @@
     width: 34px;
     border: 1px solid #999;
 }
+
+.square:hover{
+    background-color: chartreuse;
+    transform: scale(1.25);
+}

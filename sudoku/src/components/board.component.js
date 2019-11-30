@@ -1,40 +1,35 @@
 import React from 'react';
 import Cell from './cell/cell';
+import './board.component.css';
 
 class board extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            squares: Array(81).fill(null),
+            squares: new Array(9).fill(null).map(() => new Array(9).fill(1))
         }
         this.renderSquare = this.renderSquare.bind(this);
         this.renderArray = this.renderArray.bind(this);
     }
 
-    // componentDidMount(){
-    //     this.renderArray();
-    // }
-
-    renderSquare(i){
+    renderSquare(i,row,col){
         console.log("Hello World", i);
         return(
-            <Cell value={i} />
+            <Cell value={i} onClick={() => this.props.onClick(i,row,col)}/>
         );
     }
 
     renderArray(){
-        let squares = this.state.squares;
-        var row,col,rowHtml,tableHtml,colHtml;
+        let squares = this.props.squares;
+        var row,col,rowHtml;
         rowHtml = '';
-        tableHtml = '';
-
         let arrayHtml = [];
         for(row = 0 ; row < 9; row++){
             rowHtml = [];
             for(col = 0 ; col < 9 ; col++){
                 rowHtml.push(
                     <td className = {col} key={9*row+col}>
-                        {this.renderSquare(9*row + col)}
+                        {this.renderSquare(squares[row][col],row,col)}
                     </td>
                 );                
             }
@@ -48,7 +43,7 @@ class board extends React.Component{
 
     render(){
         return(
-            <div id='hello'>
+            <div className='cover-board'>
                 {this.renderArray()}
             </div>
         );

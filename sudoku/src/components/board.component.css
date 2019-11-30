@@ -1,0 +1,45 @@
+.cover-board{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+table {
+    overflow: hidden;
+  }
+
+tr:hover {
+    background-color: #ffa;
+  }
+  
+td, th {
+    position: relative;
+    padding: 10px;
+}
+
+  td:nth-child(3n) {
+    border-right:solid ;
+  }
+  tr:nth-child(3n)  {
+    border-bottom:solid ;
+  }
+
+  tr:last-child{
+      border-bottom: transparent;
+  }
+
+  td:last-child{
+      border-right: transparent;
+  }
+
+td:hover::after{
+  content: "";
+  position: absolute;
+  background-color: #ffa;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+}
