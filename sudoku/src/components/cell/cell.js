@@ -5,7 +5,9 @@ import $ from 'jquery';
 function cell(props){
 
     return(
-        <button className = 'square' onClick={props.onClick} value={props.value}>{props.value}</button>
+        <button className = 'square' onClick={props.onClick} value={props.value}>
+            {props.value == 0 ? ' ': props.value}
+        </button>
     );
 }
 

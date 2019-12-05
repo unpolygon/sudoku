@@ -13,7 +13,7 @@ class board extends React.Component{
     }
 
     renderSquare(i,row,col){
-        console.log("Hello World", i);
+        // console.log("Hello World", i);
         return(
             <Cell value={i} onClick={() => this.props.onClick(i,row,col)}/>
         );
